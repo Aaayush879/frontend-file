@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import {Routes, BrowserRouter as Router , Route} from 'react-router-dom';
+import Ap from './component/Admin';
+import Formm from './component/Formm';
+import axios from 'axios';
 
-function App() {
+function App () {
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Router>
+        <Routes>
+          <Route eaxct path='/' element={<Formm/>}/>
+          <Route path='/image' element={<Ap/>}/>
+        </Routes>
+      </Router>
+    </React.Fragment>
   );
 }
 
